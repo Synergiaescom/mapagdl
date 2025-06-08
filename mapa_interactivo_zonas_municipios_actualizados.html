@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+<style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+<style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css" rel="stylesheet"/>
+<meta content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<style>
+                #map_df6558e6088844bd391652d787eba332 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css" rel="stylesheet"/>
+</head>
+<body>
+<div style="
+    position: fixed; 
+    bottom: 50px; left: 50px; width: 180px; height: 180px; 
+    background-color: white;
+    border:2px solid grey; z-index:9999; font-size:14px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2); padding: 10px;
+">
+<b>Zonas por Radio (km)</b><br/>
+<i style="background:green;color:green">---</i> 10 km<br/>
+<i style="background:blue;color:blue">---</i> 20 km<br/>
+<i style="background:orange;color:orange">---</i> 30 km<br/>
+<i style="background:purple;color:purple">---</i> 40 km<br/>
+<i style="background:red;color:red">---</i> 50 km<br/>
+</div>
+<div class="folium-map" id="map_df6558e6088844bd391652d787eba332"></div>
+</body>
+<script>
+    
+    
+            var map_df6558e6088844bd391652d787eba332 = L.map(
+                "map_df6558e6088844bd391652d787eba332",
+                {
+                    center: [20.6597, -103.3496],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a82c0d4f86eac06b8ad8589206cecd7f = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_df6558e6088844bd391652d787eba332);
+        
+    
+            var circle_c29ce10b168c24d8cc3da5d383481294 = L.circle(
+                [20.6597, -103.3496],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.05, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_df6558e6088844bd391652d787eba332);
+        
+    
+        var popup_c23c0dee3f8788fd1a9ba920febe385b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1376a670e1b0441f91295169fb557435 = $(`<div id="html_1376a670e1b0441f91295169fb557435" style="width: 100.0%; height: 100.0%;"><b>Zona de Zona de 10 km – 3 municipios</b><br>Color: Verde<br>Municipios: Guadalajara, Zapopan, Tlaquepaque</div>`)[0];
+            popup_c23c0dee3f8788fd1a9ba920febe385b.setContent(html_1376a670e1b0441f91295169fb557435);
+        
+
+        circle_c29ce10b168c24d8cc3da5d383481294.bindPopup(popup_c23c0dee3f8788fd1a9ba920febe385b)
+        ;
+
+        
+    
+    
+            circle_c29ce10b168c24d8cc3da5d383481294.bindTooltip(
+                `<div>
+                     Zona de 10 km – 3 municipios
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_6edb35294345788e3e0cb95a9bdc597f = L.circle(
+                [20.6597, -103.3496],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.05, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20000, "stroke": true, "weight": 3}
+            ).addTo(map_df6558e6088844bd391652d787eba332);
+        
+    
+        var popup_47b8f89237eceb2cedb07ddbb9ba5d20 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c9ec016af66a7217557be416373da537 = $(`<div id="html_c9ec016af66a7217557be416373da537" style="width: 100.0%; height: 100.0%;"><b>Zona de Zona de 20 km – 3 municipios</b><br>Color: Azul<br>Municipios: Tonalá, Santa Anita, Tesistán</div>`)[0];
+            popup_47b8f89237eceb2cedb07ddbb9ba5d20.setContent(html_c9ec016af66a7217557be416373da537);
+        
+
+        circle_6edb35294345788e3e0cb95a9bdc597f.bindPopup(popup_47b8f89237eceb2cedb07ddbb9ba5d20)
+        ;
+
+        
+    
+    
+            circle_6edb35294345788e3e0cb95a9bdc597f.bindTooltip(
+                `<div>
+                     Zona de 20 km – 3 municipios
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_c26b09296b4d21ad778e445681ee1c5d = L.circle(
+                [20.6597, -103.3496],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.05, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 30000, "stroke": true, "weight": 3}
+            ).addTo(map_df6558e6088844bd391652d787eba332);
+        
+    
+        var popup_e01c78bc311542698898785a5f43f933 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7d2a69cedb54c6a0b49bc055792af803 = $(`<div id="html_7d2a69cedb54c6a0b49bc055792af803" style="width: 100.0%; height: 100.0%;"><b>Zona de Zona de 30 km – 2 municipios</b><br>Color: Naranja<br>Municipios: Ixtlahuacán del Río, La Primavera</div>`)[0];
+            popup_e01c78bc311542698898785a5f43f933.setContent(html_7d2a69cedb54c6a0b49bc055792af803);
+        
+
+        circle_c26b09296b4d21ad778e445681ee1c5d.bindPopup(popup_e01c78bc311542698898785a5f43f933)
+        ;
+
+        
+    
+    
+            circle_c26b09296b4d21ad778e445681ee1c5d.bindTooltip(
+                `<div>
+                     Zona de 30 km – 2 municipios
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_95aa4a48ee3eba0d7c7931527e22ddcf = L.circle(
+                [20.6597, -103.3496],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.05, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 40000, "stroke": true, "weight": 3}
+            ).addTo(map_df6558e6088844bd391652d787eba332);
+        
+    
+        var popup_c26a26108561e6f720ccdff40bb19607 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_707c5fe60a4e89db19ec5f414b17598e = $(`<div id="html_707c5fe60a4e89db19ec5f414b17598e" style="width: 100.0%; height: 100.0%;"><b>Zona de Zona de 40 km – 2 municipios</b><br>Color: Morado<br>Municipios: Santa Cruz de las Flores, Nuevo México (Zapopan)</div>`)[0];
+            popup_c26a26108561e6f720ccdff40bb19607.setContent(html_707c5fe60a4e89db19ec5f414b17598e);
+        
+
+        circle_95aa4a48ee3eba0d7c7931527e22ddcf.bindPopup(popup_c26a26108561e6f720ccdff40bb19607)
+        ;
+
+        
+    
+    
+            circle_95aa4a48ee3eba0d7c7931527e22ddcf.bindTooltip(
+                `<div>
+                     Zona de 40 km – 2 municipios
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_8b8c2125076fd58a67ac6e960c092f63 = L.circle(
+                [20.6597, -103.3496],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.05, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 50000, "stroke": true, "weight": 3}
+            ).addTo(map_df6558e6088844bd391652d787eba332);
+        
+    
+        var popup_832b63c948c80b7aed0fefa8a34cc164 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d5c9af9da8ecf43943b4b4b035241555 = $(`<div id="html_d5c9af9da8ecf43943b4b4b035241555" style="width: 100.0%; height: 100.0%;"><b>Zona de Zona de 50 km – 4 municipios</b><br>Color: Rojo<br>Municipios: Tlajomulco de Zúñiga, El Arenal, Acatlán de Juárez, Zacoalco de Torres</div>`)[0];
+            popup_832b63c948c80b7aed0fefa8a34cc164.setContent(html_d5c9af9da8ecf43943b4b4b035241555);
+        
+
+        circle_8b8c2125076fd58a67ac6e960c092f63.bindPopup(popup_832b63c948c80b7aed0fefa8a34cc164)
+        ;
+
+        
+    
+    
+            circle_8b8c2125076fd58a67ac6e960c092f63.bindTooltip(
+                `<div>
+                     Zona de 50 km – 4 municipios
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cluster_658b767735e8293c3aa2a9b9f5d1aa6c = L.markerClusterGroup(
+                {}
+            );
+            map_df6558e6088844bd391652d787eba332.addLayer(marker_cluster_658b767735e8293c3aa2a9b9f5d1aa6c);
+        
+    
+            var marker_face2d0e9509334a611bce8fb454e96a = L.marker(
+                [20.6597, -103.3496],
+                {}
+            ).addTo(marker_cluster_658b767735e8293c3aa2a9b9f5d1aa6c);
+        
+    
+        var popup_6e60c5f427ae88219c280808ff04f16c = L.popup({"maxWidth": 300});
+
+        
+            var html_b755b4c02801be4382ad547996cb223d = $(`<div id="html_b755b4c02801be4382ad547996cb223d" style="width: 100.0%; height: 100.0%;">             <b>Zapopan (zona central)</b><br>             Estado: Jalisco<br>             Distancia: 8.0 km<br>             Tiempo estimado: 35 min<br>             Transporte: Tren ligero + camión<br>             Costo transporte: $42.90<br>             Costo gasolina: $20.99         </div>`)[0];
+            popup_6e60c5f427ae88219c280808ff04f16c.setContent(html_b755b4c02801be4382ad547996cb223d);
+        
+
+        marker_face2d0e9509334a611bce8fb454e96a.bindPopup(popup_6e60c5f427ae88219c280808ff04f16c)
+        ;
+
+        
+    
+    
+            marker_face2d0e9509334a611bce8fb454e96a.bindTooltip(
+                `<div>
+                     Zapopan (zona central)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d42575953b6bcfe20c662d2dd234a459 = L.marker(
+                [20.6597, -103.3496],
+                {}
+            ).addTo(marker_cluster_658b767735e8293c3aa2a9b9f5d1aa6c);
+        
+    
+        var popup_1b9c3d9208df57648d0e1e22132a4123 = L.popup({"maxWidth": 300});
+
+        
+            var html_07da158b8fe84f2af214af9b4e141a59 = $(`<div id="html_07da158b8fe84f2af214af9b4e141a59" style="width: 100.0%; height: 100.0%;">             <b>Tlaquepaque</b><br>             Estado: Jalisco<br>             Distancia: 9.0 km<br>             Tiempo estimado: 40 min<br>             Transporte: Tren ligero + camión<br>             Costo transporte: $42.90<br>             Costo gasolina: $23.76         </div>`)[0];
+            popup_1b9c3d9208df57648d0e1e22132a4123.setContent(html_07da158b8fe84f2af214af9b4e141a59);
+        
+
+        marker_d42575953b6bcfe20c662d2dd234a459.bindPopup(popup_1b9c3d9208df57648d0e1e22132a4123)
+        ;
+
+        
+    
+    
+            marker_d42575953b6bcfe20c662d2dd234a459.bindTooltip(
+                `<div>
+                     Tlaquepaque
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a14cb5db59a81cc7f70d8273205aecab = L.marker(
+                [20.6597, -103.3496],
+                {}
+            ).addTo(marker_cluster_658b767735e8293c3aa2a9b9f5d1aa6c);
+        
+    
+        var popup_3c7c209c6c92b6563f63ef3aea97961f = L.popup({"maxWidth": 300});
+
+        
+            var html_83289c633716b860dcce712ed7feda66 = $(`<div id="html_83289c633716b860dcce712ed7feda66" style="width: 100.0%; height: 100.0%;">             <b>Tonalá (limítrofe)</b><br>             Estado: Jalisco<br>             Distancia: 10.0 km<br>             Tiempo estimado: 45 min<br>             Transporte: Camión directo<br>             Costo transporte: $26.40<br>             Costo gasolina: $26.53         </div>`)[0];
+            popup_3c7c209c6c92b6563f63ef3aea97961f.setContent(html_83289c633716b860dcce712ed7feda66);
+        
+
+        marker_a14cb5db59a81cc7f70d8273205aecab.bindPopup(popup_3c7c209c6c92b6563f63ef3aea97961f)
+        ;
+
+        
+    
+    
+            marker_a14cb5db59a81cc7f70d8273205aecab.bindTooltip(
+                `<div>
+                     Tonalá (limítrofe)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d1b768d0d718ce32e690fc5ed138e125 = L.marker(
+                [20.6597, -103.3496],
+                {}
+            ).addTo(marker_cluster_658b767735e8293c3aa2a9b9f5d1aa6c);
+        
+    
+        var popup_3eeb496571f912ad49b88db61a6312c4 = L.popup({"maxWidth": 300});
+
+        
+            var html_0c5318199e8765cab57ccee2a986e341 = $(`<div id="html_0c5318199e8765cab57ccee2a986e341" style="width: 100.0%; height: 100.0%;">             <b>Santa Anita</b><br>             Estado: Jalisco<br>             Distancia: 19.6 km<br>             Tiempo estimado: 50 min<br>             Transporte: Tren + camión<br>             Costo transporte: $64.90<br>             Costo gasolina: $51.88         </div>`)[0];
+            popup_3eeb496571f912ad49b88db61a6312c4.setContent(html_0c5318199e8765cab57ccee2a986e341);
+        
+
+        marker_d1b768d0d718ce32e690fc5ed138e125.bindPopup(popup_3eeb496571f912ad49b88db61a6312c4)
+        ;
+
+        
+    
+    
+            marker_d1b768d0d718ce32e690fc5ed138e125.bindTooltip(
+                `<div>
+                     Santa Anita
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3ec27bd3aa7a78a4d238999a4cb82a6e = L.marker(
+                [20.6597, -103.3496],
+                {}
+            ).addTo(marker_cluster_658b767735e8293c3aa2a9b9f5d1aa6c);
+        
+    
+        var popup_f0a304430684be9971288550d8c25ec6 = L.popup({"maxWidth": 300});
+
+        
+            var html_9ff5775d8bb017f01f5e360c6130f788 = $(`<div id="html_9ff5775d8bb017f01f5e360c6130f788" style="width: 100.0%; height: 100.0%;">             <b>Tesistán</b><br>             Estado: Jalisco<br>             Distancia: 20.8 km<br>             Tiempo estimado: 55 min<br>             Transporte: Tren + camión<br>             Costo transporte: $64.90<br>             Costo gasolina: $55.04         </div>`)[0];
+            popup_f0a304430684be9971288550d8c25ec6.setContent(html_9ff5775d8bb017f01f5e360c6130f788);
+        
+
+        marker_3ec27bd3aa7a78a4d238999a4cb82a6e.bindPopup(popup_f0a304430684be9971288550d8c25ec6)
+        ;
+
+        
+    
+    
+            marker_3ec27bd3aa7a78a4d238999a4cb82a6e.bindTooltip(
+                `<div>
+                     Tesistán
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d009f8b6203152bb6d083bcbb6e33326 = L.marker(
+                [20.6597, -103.3496],
+                {}
+            ).addTo(marker_cluster_658b767735e8293c3aa2a9b9f5d1aa6c);
+        
+    
+        var popup_c51cca52ec3b68216449837bf953fe59 = L.popup({"maxWidth": 300});
+
+        
+            var html_0c25838bd5c9e0af77fedef317df9846 = $(`<div id="html_0c25838bd5c9e0af77fedef317df9846" style="width: 100.0%; height: 100.0%;">             <b>Ixtlahuacán del Río</b><br>             Estado: Jalisco<br>             Distancia: 21.7 km<br>             Tiempo estimado: 60 min<br>             Transporte: Bus regional<br>             Costo transporte: $66.00<br>             Costo gasolina: $64.94         </div>`)[0];
+            popup_c51cca52ec3b68216449837bf953fe59.setContent(html_0c25838bd5c9e0af77fedef317df9846);
+        
+
+        marker_d009f8b6203152bb6d083bcbb6e33326.bindPopup(popup_c51cca52ec3b68216449837bf953fe59)
+        ;
+
+        
+    
+    
+            marker_d009f8b6203152bb6d083bcbb6e33326.bindTooltip(
+                `<div>
+                     Ixtlahuacán del Río
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ce9e037a3cfa9d8cd42ba97cd78f2709 = L.marker(
+                [20.6597, -103.3496],
+                {}
+            ).addTo(marker_cluster_658b767735e8293c3aa2a9b9f5d1aa6c);
+        
+    
+        var popup_266994204435c7a530cd30c1ebd2e5ed = L.popup({"maxWidth": 300});
+
+        
+            var html_3c31b5ee7dc86ed55b4f227aadc21cd0 = $(`<div id="html_3c31b5ee7dc86ed55b4f227aadc21cd0" style="width: 100.0%; height: 100.0%;">             <b>La Primavera</b><br>             Estado: Jalisco<br>             Distancia: 24.4 km<br>             Tiempo estimado: 55 min<br>             Transporte: Bus regional<br>             Costo transporte: $77.00<br>             Costo gasolina: $64.55         </div>`)[0];
+            popup_266994204435c7a530cd30c1ebd2e5ed.setContent(html_3c31b5ee7dc86ed55b4f227aadc21cd0);
+        
+
+        marker_ce9e037a3cfa9d8cd42ba97cd78f2709.bindPopup(popup_266994204435c7a530cd30c1ebd2e5ed)
+        ;
+
+        
+    
+    
+            marker_ce9e037a3cfa9d8cd42ba97cd78f2709.bindTooltip(
+                `<div>
+                     La Primavera
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8f83c2d55708679decad55c91fe0956c = L.marker(
+                [20.6597, -103.3496],
+                {}
+            ).addTo(marker_cluster_658b767735e8293c3aa2a9b9f5d1aa6c);
+        
+    
+        var popup_e4a65383de9d1efb8d5cf224d7252490 = L.popup({"maxWidth": 300});
+
+        
+            var html_cf3286b743a94576c852e8cafe702799 = $(`<div id="html_cf3286b743a94576c852e8cafe702799" style="width: 100.0%; height: 100.0%;">             <b>Santa Cruz de las Flores</b><br>             Estado: Jalisco<br>             Distancia: 27.9 km<br>             Tiempo estimado: 65 min<br>             Transporte: Bus regional<br>             Costo transporte: $88.00<br>             Costo gasolina: $73.66         </div>`)[0];
+            popup_e4a65383de9d1efb8d5cf224d7252490.setContent(html_cf3286b743a94576c852e8cafe702799);
+        
+
+        marker_8f83c2d55708679decad55c91fe0956c.bindPopup(popup_e4a65383de9d1efb8d5cf224d7252490)
+        ;
+
+        
+    
+    
+            marker_8f83c2d55708679decad55c91fe0956c.bindTooltip(
+                `<div>
+                     Santa Cruz de las Flores
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9b5b3577bf8adce634f11086d26930ba = L.marker(
+                [20.6597, -103.3496],
+                {}
+            ).addTo(marker_cluster_658b767735e8293c3aa2a9b9f5d1aa6c);
+        
+    
+        var popup_3fc55a97bc177bf9a3dc0b575734665b = L.popup({"maxWidth": 300});
+
+        
+            var html_cd3f0ba7e5fa843a6913564572ec10db = $(`<div id="html_cd3f0ba7e5fa843a6913564572ec10db" style="width: 100.0%; height: 100.0%;">             <b>Nuevo México (Zapopan)</b><br>             Estado: Jalisco<br>             Distancia: 14.0 km<br>             Tiempo estimado: 45 min<br>             Transporte: Tren ligero + camión<br>             Costo transporte: $53.90<br>             Costo gasolina: $36.83         </div>`)[0];
+            popup_3fc55a97bc177bf9a3dc0b575734665b.setContent(html_cd3f0ba7e5fa843a6913564572ec10db);
+        
+
+        marker_9b5b3577bf8adce634f11086d26930ba.bindPopup(popup_3fc55a97bc177bf9a3dc0b575734665b)
+        ;
+
+        
+    
+    
+            marker_9b5b3577bf8adce634f11086d26930ba.bindTooltip(
+                `<div>
+                     Nuevo México (Zapopan)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4da46088b1d4dad8ed237d0d5c4a12b0 = L.marker(
+                [20.6597, -103.3496],
+                {}
+            ).addTo(marker_cluster_658b767735e8293c3aa2a9b9f5d1aa6c);
+        
+    
+        var popup_674bbb9f01c5acc6565439d60b40771a = L.popup({"maxWidth": 300});
+
+        
+            var html_4b683a526a7c3ad35b9348843b470e81 = $(`<div id="html_4b683a526a7c3ad35b9348843b470e81" style="width: 100.0%; height: 100.0%;">             <b>Tlajomulco de Zúñiga</b><br>             Estado: Jalisco<br>             Distancia: 34.0 km<br>             Tiempo estimado: 70 min<br>             Transporte: Bus regional<br>             Costo transporte: $99.00<br>             Costo gasolina: $89.89         </div>`)[0];
+            popup_674bbb9f01c5acc6565439d60b40771a.setContent(html_4b683a526a7c3ad35b9348843b470e81);
+        
+
+        marker_4da46088b1d4dad8ed237d0d5c4a12b0.bindPopup(popup_674bbb9f01c5acc6565439d60b40771a)
+        ;
+
+        
+    
+    
+            marker_4da46088b1d4dad8ed237d0d5c4a12b0.bindTooltip(
+                `<div>
+                     Tlajomulco de Zúñiga
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_553e6662416f9accf77e2312b909630c = L.marker(
+                [20.6597, -103.3496],
+                {}
+            ).addTo(marker_cluster_658b767735e8293c3aa2a9b9f5d1aa6c);
+        
+    
+        var popup_13f60d83d11eaa1c02059220c47e6e5f = L.popup({"maxWidth": 300});
+
+        
+            var html_3f5752e435f60f8586ba19242713df11 = $(`<div id="html_3f5752e435f60f8586ba19242713df11" style="width: 100.0%; height: 100.0%;">             <b>El Arenal</b><br>             Estado: Jalisco<br>             Distancia: 38.0 km<br>             Tiempo estimado: 75 min<br>             Transporte: Bus regional<br>             Costo transporte: $99.00<br>             Costo gasolina: $100.19         </div>`)[0];
+            popup_13f60d83d11eaa1c02059220c47e6e5f.setContent(html_3f5752e435f60f8586ba19242713df11);
+        
+
+        marker_553e6662416f9accf77e2312b909630c.bindPopup(popup_13f60d83d11eaa1c02059220c47e6e5f)
+        ;
+
+        
+    
+    
+            marker_553e6662416f9accf77e2312b909630c.bindTooltip(
+                `<div>
+                     El Arenal
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f454a09ed21495f6d9449019175e3f16 = L.marker(
+                [20.6597, -103.3496],
+                {}
+            ).addTo(marker_cluster_658b767735e8293c3aa2a9b9f5d1aa6c);
+        
+    
+        var popup_23babf795cc627086f4c67ff72ec1815 = L.popup({"maxWidth": 300});
+
+        
+            var html_af63b6999363058d22c1bc32968d31c9 = $(`<div id="html_af63b6999363058d22c1bc32968d31c9" style="width: 100.0%; height: 100.0%;">             <b>Acatlán de Juárez</b><br>             Estado: Jalisco<br>             Distancia: 45.0 km<br>             Tiempo estimado: 80 min<br>             Transporte: Bus regional<br>             Costo transporte: $110.00<br>             Costo gasolina: $118.80         </div>`)[0];
+            popup_23babf795cc627086f4c67ff72ec1815.setContent(html_af63b6999363058d22c1bc32968d31c9);
+        
+
+        marker_f454a09ed21495f6d9449019175e3f16.bindPopup(popup_23babf795cc627086f4c67ff72ec1815)
+        ;
+
+        
+    
+    
+            marker_f454a09ed21495f6d9449019175e3f16.bindTooltip(
+                `<div>
+                     Acatlán de Juárez
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f049979cf1371430fa942367e95c6334 = L.marker(
+                [20.6597, -103.3496],
+                {}
+            ).addTo(marker_cluster_658b767735e8293c3aa2a9b9f5d1aa6c);
+        
+    
+        var popup_96f22dd70e16a9792549f26e4e762e2e = L.popup({"maxWidth": 300});
+
+        
+            var html_c2db292039c28b2be9d72bbe1fe90eaf = $(`<div id="html_c2db292039c28b2be9d72bbe1fe90eaf" style="width: 100.0%; height: 100.0%;">             <b>Zacoalco de Torres</b><br>             Estado: Jalisco<br>             Distancia: 49.0 km<br>             Tiempo estimado: 85 min<br>             Transporte: Bus regional<br>             Costo transporte: $121.00<br>             Costo gasolina: $129.49         </div>`)[0];
+            popup_96f22dd70e16a9792549f26e4e762e2e.setContent(html_c2db292039c28b2be9d72bbe1fe90eaf);
+        
+
+        marker_f049979cf1371430fa942367e95c6334.bindPopup(popup_96f22dd70e16a9792549f26e4e762e2e)
+        ;
+
+        
+    
+    
+            marker_f049979cf1371430fa942367e95c6334.bindTooltip(
+                `<div>
+                     Zacoalco de Torres
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
